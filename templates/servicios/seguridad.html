@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio Seguridad | ElectroPower</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo">ELECTRO<span>POWER</span></div>
+        <a href="/" class="btn-nav">Volver al Inicio</a>
+    </nav>
+
+    <header class="portfolio-header">
+        <h1>Sistemas de Seguridad y Automatización</h1>
+        <p>Soluciones integrales para protección residencial, comercial e industrial.</p>
+    </header>
+
+    <section class="container">
+        <div class="project-item">
+            <div class="project-info">
+                <h3>CCTV & Monitoreo</h3>
+                <p>Instalación de cámaras HD/IP, Alarmas, Detección de Incendio y Control de Acceso Vehicular/Peatonal.</p>
+            </div>
+            <div class="project-img">
+                <img src="/static/img/visual.jpeg" alt="Monitoreo">
+            </div>
+        </div>
+        
+        <div class="project-item reverse">
+            <div class="project-info">
+                <h3>Seguridad Perimetral</h3>
+                <p>Cercas eléctricas de alto voltaje y sistemas de automatización de portones.</p>
+            </div>
+            <div class="project-img">
+                <img src="/static/img/cercaelectrica.jpeg" alt="Cerca Eléctrica">
+            </div>
+        </div>
+    </section>
+</body>
+</html>
