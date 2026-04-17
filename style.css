@@ -166,6 +166,57 @@ body { background-color: var(--gris); color: var(--dark); }
     line-height: 1.6;
     color: #555;
     text-align: justify;
+    ### Estilos sugeridos (Agrega esto a tu `style.css`)
+Para que esta nueva sección se vea bien, asegúrate de tener estos estilos básicos en tu archivo CSS:
+
+```css
+.about-us {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.stat-item strong {
+    display: block;
+    font-size: 1.5rem;
+    color: #0056b3; /* Color azul eléctrico */
+}
+
+.value-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-left: 5px solid #0056b3;
+}
+
+.value-card h4 {
+    margin: 10px 0;
+    color: #222;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
 }
 
 /* ... (Conserva todo lo anterior de style.css) ... */
