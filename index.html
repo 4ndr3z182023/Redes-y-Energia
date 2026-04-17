@@ -58,7 +58,35 @@
             </div>
         </div>
 <main class="container">
-        
+        <div id="nosotros" class="service-panel animate__animated animate__fadeIn" style="display: none;">
+    <div class="panel-grid">
+        <div class="panel-info">
+            <span class="badge">NUESTRA ESENCIA</span>
+            <h2>Compromiso con la Excelencia Técnica</h2>
+            
+            <div class="mision-vision-container">
+                <div class="mv-item">
+                    <h3>🚀 Misión</h3>
+                    <p>Proveer soluciones integrales en ingeniería eléctrica y seguridad electrónica, garantizando la protección de activos y la continuidad operativa de nuestros clientes. Nos enfocamos en el cumplimiento riguroso de las normativas vigentes, utilizando tecnología de vanguardia y mano de obra calificada para transformar la infraestructura técnica en entornos seguros y eficientes.</p>
+                </div>
+                
+                <div class="mv-item" style="margin-top: 20px;">
+                    <h3>👁️ Visión</h3>
+                    <p>Para el año 2030, consolidarnos como el aliado estratégico líder en Colombia para proyectos de infraestructura y seguridad inteligente. Buscamos ser reconocidos por nuestra capacidad de innovación en energías limpias y sistemas de inteligencia artificial, manteniendo siempre la cercanía y confianza que nos caracteriza como expertos en ingeniería técnica.</p>
+                </div>
+            </div>
+            
+            <ul class="feature-list" style="margin-top: 20px;">
+                <li><span>✅</span> Ética y Transparencia Profesional</li>
+                <li><span>✅</span> Calidad Técnica Garantizada</li>
+                <li><span>✅</span> Innovación Constante</li>
+            </ul>
+        </div>
+        <div class="panel-media">
+            <img src="img/nosotros.jpeg" alt="Equipo Redes & Energia" class="img-main" style="filter: grayscale(20%);">
+        </div>
+    </div>
+</div>
         <div id="elec" class="service-panel active animate__animated animate__fadeIn">
             <div class="panel-grid">
                 <div class="panel-info">
@@ -116,38 +144,61 @@
     </main>
 
 
-        <div id="seg" class="service-panel animate__animated animate__fadeIn">
-            <div class="panel-grid">
-                <div class="panel-info">
-                    <span class="badge sec-badge">SEGURIDAD ELECTRÓNICA IA</span>
-                    <h2>Protección de Nueva Generación</h2>
-                    <p>Implementamos sistemas inteligentes que no solo graban, sino que previenen incidentes en tiempo real.</p>
-                    
-                    <div class="tech-specs sec-specs">
-                        <div class="spec-item"><strong>Tecnologías:</strong> IA AcuSense, ColorVu (24/7 Color), LPR.</div>
-                        <div class="spec-item"><strong>Marcas:</strong> Hikvision, Dahua, Ajax, DSC, Ezviz.</div>
-                    </div>
+       <div id="seg" class="service-panel animate__animated animate__fadeIn" style="display: none;">
+    <div class="panel-grid">
+        <div class="panel-info">
+            <span class="badge sec-badge">TECNOLOGÍA DE PROTECCIÓN</span>
+            <h2>Seguridad Electrónica Integral</h2>
+            <p>Seleccione un servicio para ver nuestra galería de proyectos:</p>
+            
+            <div class="sub-tabs">
+                <button class="sub-tab-item active" onclick="verAlbum('cctv')">📹 CCTV IA</button>
+                <button class="sub-tab-item" onclick="verAlbum('incendio')">🔥 Incendio</button>
+                <button class="sub-tab-item" onclick="verAlbum('acceso')">🛂 Acceso</button>
+                <button class="sub-tab-item" onclick="verAlbum('cercas')">⚡ Cercas</button>
+            </div>
 
-                    <ul class="feature-list">
-                        <li><span>🛡️</span> <strong>CCTV con IA:</strong> Filtro de humanos y vehículos para evitar falsas alarmas de mascotas o lluvia.</li>
-                        <li><span>🛡️</span> <strong>Visión Nocturna 4K:</strong> Tecnología de ultra baja luz para ver colores nítidos en oscuridad total.</li>
-                        <li><span>🛡️</span> <strong>Alarmas Inalámbricas:</strong> Sistemas Grado 2 con conexión a celular y batería de respaldo de larga duración.</li>
-                        <li><span>🛡️</span> <strong>Control de Acceso:</strong> Reconocimiento facial, biometría y citofonía IP gestionada desde App.</li>
-                        <li><span>🛡️</span> <strong>Perímetros:</strong> Cercas eléctricas con energizadores de alta potencia y sensores de impacto.</li>
-                    </ul>
-                    <a href="https://wa.me/tu_numero" class="btn-wa seg-color">SOLICITAR DIAGNÓSTICO IA</a>
+            <div class="feature-list">
+                <p id="desc-servicio" style="font-weight: bold; color: #2d3436; margin-top: 15px;">
+                    Cámaras 4K con Inteligencia Artificial y monitoreo remoto.
+                </p>
+            </div>
+            
+            <a href="https://wa.me/573142447898" class="btn-wa seg-color">SOLICITAR ESTUDIO DE SEGURIDAD</a>
+        </div>
+
+        <div class="panel-media">
+            <div id="album-cctv" class="album-container active">
+                <img src="img/cctv-1.jpeg" alt="CCTV 1" class="img-main">
+                <div class="album-grid">
+                    <img src="img/cctv-2.jpeg" onclick="cambiarPrincipal(this)">
+                    <img src="img/cctv-3.jpeg" onclick="cambiarPrincipal(this)">
                 </div>
-                <div class="panel-media">
-                    <div class="scanner-effect">
-                        <img src="img/visual.jpeg" alt="Tecnología de Seguridad" class="img-main">
-                        <div class="line"></div>
-                    </div>
-                    <div class="brand-strip">
-                        <span>HIKVISION</span> | <span>DAHUA</span> | <span>AJAX</span> | <span>EZVIZ</span>
-                    </div>
+            </div>
+
+            <div id="album-incendio" class="album-container" style="display:none;">
+                <img src="img/incendio-1.jpeg" alt="Incendio" class="img-main">
+                <div class="album-grid">
+                    <img src="img/incendio-2.jpeg" onclick="cambiarPrincipal(this)">
+                </div>
+            </div>
+
+            <div id="album-acceso" class="album-container" style="display:none;">
+                <img src="img/acceso-1.jpeg" alt="Acceso" class="img-main">
+                <div class="album-grid">
+                    <img src="img/acceso-2.jpeg" onclick="cambiarPrincipal(this)">
+                </div>
+            </div>
+
+            <div id="album-cercas" class="album-container" style="display:none;">
+                <img src="img/cercas-1.jpeg" alt="Cercas" class="img-main">
+                <div class="album-grid">
+                    <img src="img/cercas-2.jpeg" onclick="cambiarPrincipal(this)">
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
     </main>
 
@@ -189,5 +240,8 @@
 </body>
 
 </html>
+
+
+
 
 
