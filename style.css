@@ -1,223 +1,369 @@
+/* =========================================
+   VARIABLES Y CONFIGURACIÓN BASE
+   ========================================= */
 :root {
     --azul: #002d5a;
+    --azul-claro: #0056b3;
     --verde: #28a745;
-    --gris: #f8f9fa;
+    --gris-fondo: #f8f9fa;
+    --gris-texto: #444;
     --dark: #1a1a1a;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Inter', sans-serif; 
+}
 
-body { background-color: var(--gris); color: var(--dark); }
+body { 
+    background-color: var(--gris-fondo); 
+    color: var(--dark); 
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-/* NAVBAR */
+/* =========================================
+   NAVBAR & LOGO
+   ========================================= */
 .navbar {
-    /* ... otras propiedades ... */
-    padding: 10px 8%; /* <--- Reduce el primer número (ej. de 15px o 20px a 10px) */
-    /* ... otras propiedades ... */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8%;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-/* Busca esta regla en tu CSS y cambia el valor de height */
 
 .logo-img {
-    height: 100px; /* Prueba con este valor intermedio */
-    margin-right: 12px;
+    height: 80px; /* Ajustado para mayor elegancia */
     object-fit: contain;
-    width: auto;
-    vertical-align: middle; /* Ayuda a que quede bien centrado con el texto */
-}
-/* HEADER */
-.main-header {
-    background: linear-gradient(rgba(0,45,90,0.8), rgba(0,45,90,0.8)), url('img/conduit-emt.jpeg');
-    background-size: cover; background-position: center; height: 40vh;
-    display: flex; align-items: center; justify-content: center; text-align: center; color: white;
-}
-.main-header h1 { font-size: 3rem; letter-spacing: 2px; }
-
-/* SELECTOR TABS */
-.selector-section { display: flex; justify-content: center; margin-top: -30px; }
-.tabs { background: white; padding: 10px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; gap: 10px; }
-.tab-item { 
-    border: none; background: none; padding: 15px 30px; border-radius: 40px;
-    cursor: pointer; display: flex; align-items: center; gap: 10px; transition: 0.3s;
-    font-weight: bold; color: #666;
-}
-.tab-item.active { background: var(--azul); color: white; }
-.tab-icon { font-size: 20px; }
-
-/* PANELES DE SERVICIO */
-.container { padding: 60px 8%; }
-.service-panel { display: none; }
-.service-panel.active { display: block; }
-.panel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-
-.panel-info h2 { font-size: 2.5rem; color: var(--azul); margin-bottom: 20px; }
-.feature-list { list-style: none; margin: 30px 0; }
-.feature-list li { margin: 12px 0; font-size: 1.1rem; display: flex; gap: 10px; }
-.feature-list span { color: var(--verde); font-weight: bold; }
-
-.img-main { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-
-/* BOTÓN WHATSAPP */
-.btn-wa { 
-    display: inline-block; background: var(--verde); color: white;
-    padding: 18px 35px; border-radius: 50px; text-decoration: none;
-    font-weight: bold; box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
-}
-.seg-color { background: var(--azul); box-shadow: 0 10px 20px rgba(0, 45, 90, 0.3); }
-
-.footer { text-align: center; padding: 40px; background: white; color: #888; border-top: 1px solid #eee; }
-
-@media (max-width: 768px) {
-    .panel-grid { grid-template-columns: 1fr; text-align: center; }
-    .main-header h1 { font-size: 2rem; }
-}
-/* Especificaciones Técnicas (Cuadritos grises) */
-.tech-specs {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
+    transition: var(--transition);
 }
 
-.spec-item {
-    background: #eee;
-    padding: 8px 15px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    color: #444;
-    border-left: 3px solid var(--verde);
-}
-
-.sec-specs .spec-item {
-    border-left: 3px solid var(--celeste);
-}
-
-/* Tira de Marcas bajo la imagen */
-.brand-strip {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 0.75rem;
-    font-weight: 800;
-    color: #bbb;
-    letter-spacing: 1px;
-}
-
-.brand-strip span {
-    margin: 0 5px;
-    color: var(--azul);
-    opacity: 0.6;
-}
-
-/* Ajuste del Feature List para que no se vea amontonado */
-.feature-list li strong {
-    color: var(--azul);
-/* Estilos para los sub-álbumes */
-.sub-tabs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.sub-tab-item {
-    padding: 10px;
-    border: 1px solid #ddd;
-    background: #f9f9f9;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-.sub-tab-item.active {
-    background: #2d3436;
+.btn-contacto {
+    background: var(--azul);
     color: white;
-    border-color: #2d3436;
-}
-
-.album-grid {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.album-grid img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
+    padding: 10px 20px;
     border-radius: 5px;
-    cursor: pointer;
-    opacity: 0.7;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: var(--transition);
 }
 
-.album-grid img:hover {
-    opacity: 1;
-    border: 2px solid #007bff;
-}
-}
-.mv-item h3 {
-    color: #2c3e50; /* O el color principal de tu marca */
-    font-size: 1.4rem;
-    margin-bottom: 8px;
-    border-left: 4px solid #007bff; /* Detalle visual */
-    padding-left: 10px;
+.btn-contacto:hover {
+    background: var(--azul-claro);
+    transform: translateY(-2px);
 }
 
-.mv-item p {
-    line-height: 1.6;
-    color: #555;
-    text-align: justify;
-    ### Estilos sugeridos (Agrega esto a tu `style.css`)
-Para que esta nueva sección se vea bien, asegúrate de tener estos estilos básicos en tu archivo CSS:
+/* =========================================
+   HEADER PRINCIPAL
+   ========================================= */
+.main-header {
+    background: linear-gradient(rgba(0,45,90,0.85), rgba(0,45,90,0.85)), 
+                url('img/conduit-emt.jpeg'); /* Asegúrate que la ruta sea correcta */
+    background-size: cover; 
+    background-position: center; 
+    height: 45vh;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    color: white;
+}
 
-```css
+.header-content h1 { 
+    font-size: clamp(2rem, 5vw, 3.5rem); 
+    letter-spacing: 2px; 
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* =========================================
+   SECCIÓN QUIÉNES SOMOS (About Us)
+   ========================================= */
 .about-us {
-    padding: 60px 20px;
-    background-color: #f8f9fa;
-    color: #333;
+    padding: 80px 8%;
+    background-color: var(--white);
 }
 
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 60px;
     max-width: 1200px;
     margin: 0 auto;
     align-items: center;
 }
 
+.badge {
+    display: inline-block;
+    background: rgba(0, 45, 90, 0.1);
+    color: var(--azul);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    color: var(--azul);
+    margin-bottom: 20px;
+}
+
 .stats {
     display: flex;
-    gap: 30px;
-    margin-top: 20px;
+    gap: 40px;
+    margin-top: 30px;
 }
 
 .stat-item strong {
     display: block;
-    font-size: 1.5rem;
-    color: #0056b3; /* Color azul eléctrico */
+    font-size: 2rem;
+    color: var(--azul-claro);
+}
+
+.stat-item span {
+    font-size: 0.9rem;
+    color: #666;
 }
 
 .value-card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    border-left: 5px solid #0056b3;
+    background: var(--gris-fondo);
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 6px solid var(--azul);
+    transition: var(--transition);
+}
+
+.value-card:hover {
+    transform: translateX(10px);
 }
 
 .value-card h4 {
     margin: 10px 0;
-    color: #222;
+    color: var(--dark);
+    font-size: 1.2rem;
 }
 
-/* Responsivo para móviles */
-@media (max-width: 768px) {
-    .about-grid {
-        grid-template-columns: 1fr;
+/* =========================================
+   SELECTOR DE TABS
+   ========================================= */
+.selector-section { 
+    display: flex; 
+    justify-content: center; 
+    margin-top: -35px; 
+    position: relative;
+    z-index: 10;
+}
+
+.tabs { 
+    background: white; 
+    padding: 8px; 
+    border-radius: 60px; 
+    box-shadow: var(--shadow); 
+    display: flex; 
+    gap: 10px; 
+}
+
+.tab-item { 
+    border: none; 
+    background: none; 
+    padding: 15px 35px; 
+    border-radius: 50px;
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    transition: var(--transition);
+    font-weight: bold; 
+    color: #777;
+}
+
+.tab-item.active { 
+    background: var(--azul); 
+    color: white; 
+}
+
+/* =========================================
+   PANELES DE SERVICIO
+   ========================================= */
+.container { padding: 80px 8%; }
+
+.service-panel { 
+    display: none; 
+}
+
+.service-panel.active { 
+    display: block; 
+}
+
+.panel-grid { 
+    display: grid; 
+    grid-template-columns: 1.1fr 0.9fr; 
+    gap: 60px; 
+    align-items: center; 
+}
+
+.panel-info h2 { 
+    font-size: 2.8rem; 
+    color: var(--azul); 
+    margin-bottom: 20px; 
+    line-height: 1.1;
+}
+
+/* Especificaciones Técnicas */
+.tech-specs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.spec-item {
+    background: #eeeeee;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: var(--dark);
+    border-left: 4px solid var(--verde);
+    font-weight: 600;
+}
+
+.sec-specs .spec-item {
+    border-left: 4px solid var(--azul-claro);
+}
+
+/* Listas de beneficios */
+.feature-list { list-style: none; margin: 30px 0; }
+.feature-list li { 
+    margin: 15px 0; 
+    font-size: 1.05rem; 
+    display: flex; 
+    align-items: flex-start;
+    gap: 12px; 
+}
+.feature-list li span { font-size: 1.2rem; }
+.feature-list li strong { color: var(--azul); }
+
+/* Media / Imágenes */
+.panel-media { position: relative; }
+
+.img-main { 
+    width: 100%; 
+    border-radius: 25px; 
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15); 
+    display: block;
+}
+
+.brand-strip {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #999;
+    letter-spacing: 1.5px;
+}
+
+.brand-strip span {
+    margin: 0 8px;
+    color: var(--azul);
+    opacity: 0.7;
+}
+
+/* =========================================
+   BOTONES WHATSAPP
+   ========================================= */
+.btn-wa { 
+    display: inline-block; 
+    background: var(--verde); 
+    color: white;
+    padding: 20px 40px; 
+    border-radius: 50px; 
+    text-decoration: none;
+    font-weight: 800; 
+    font-size: 1rem;
+    box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-wa:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.seg-color { 
+    background: var(--azul-claro); 
+    box-shadow: 0 10px 20px rgba(0, 86, 179, 0.3); 
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer { 
+    text-align: center; 
+    padding: 50px 8%; 
+    background: var(--white); 
+    color: #888; 
+    border-top: 1px solid #eee; 
+}
+
+/* =========================================
+   RESPONSIVE (MÓVILES)
+   ========================================= */
+@media (max-width: 992px) {
+    .panel-grid, .about-grid { 
+        grid-template-columns: 1fr; 
+        gap: 40px;
+    }
+    
+    .panel-info, .about-text {
+        text-align: center;
+    }
+    
+    .feature-list li {
+        justify-content: center;
+        text-align: left;
+    }
+
+    .tech-specs, .stats {
+        justify-content: center;
     }
 }
+
+@media (max-width: 480px) {
+    .tabs {
+        flex-direction: column;
+        border-radius: 20px;
+        width: 100%;
+        margin: 0 20px;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header-content h1 {
+        font-size: 1.8rem;
+    }
 }
-
-/* ... (Conserva todo lo anterior de style.css) ... */
-
