@@ -18,7 +18,7 @@ body { background-color: var(--gris); color: var(--dark); }
 /* Busca esta regla en tu CSS y cambia el valor de height */
 
 .logo-img {
-    height: 42px; /* Prueba con este valor intermedio */
+    height: 100px; /* Prueba con este valor intermedio */
     margin-right: 12px;
     object-fit: contain;
     width: auto;
