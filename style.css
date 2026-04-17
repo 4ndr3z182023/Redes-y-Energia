@@ -110,6 +110,63 @@ body { background-color: var(--gris); color: var(--dark); }
 /* Ajuste del Feature List para que no se vea amontonado */
 .feature-list li strong {
     color: var(--azul);
+/* Estilos para los sub-álbumes */
+.sub-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.sub-tab-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.sub-tab-item.active {
+    background: #2d3436;
+    color: white;
+    border-color: #2d3436;
+}
+
+.album-grid {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.album-grid img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.album-grid img:hover {
+    opacity: 1;
+    border: 2px solid #007bff;
+}
+}
+.mv-item h3 {
+    color: #2c3e50; /* O el color principal de tu marca */
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    border-left: 4px solid #007bff; /* Detalle visual */
+    padding-left: 10px;
+}
+
+.mv-item p {
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
 }
 
 /* ... (Conserva todo lo anterior de style.css) ... */
+
