@@ -11,15 +11,17 @@ body { background-color: var(--gris); color: var(--dark); }
 
 /* NAVBAR */
 .navbar {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 8%; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: sticky; top: 0; z-index: 1000;
+    /* ... otras propiedades ... */
+    padding: 10px 8%; /* <--- Reduce el primer número (ej. de 15px o 20px a 10px) */
+    /* ... otras propiedades ... */
 }
-.logo { font-weight: 800; font-size: 24px; color: var(--azul); }
-.logo span { color: var(--verde); }
-.btn-contacto { 
-    background: var(--verde); color: white; text-decoration: none;
-    padding: 10px 20px; border-radius: 8px; font-weight: bold; font-size: 14px;
+/* Busca esta regla en tu CSS y cambia el valor de height */
+
+.logo-img {
+    height: 35px; /* <--- Cambia este valor (estaba en 45px o 50px). Prueba con 35px o 30px */
+    margin-right: 12px;
+    object-fit: contain; /* Esto asegura que la imagen no se deforme */
+    width: auto; /* Mantener la proporción de ancho automática */
 }
 
 /* HEADER */
