@@ -18,12 +18,12 @@ body { background-color: var(--gris); color: var(--dark); }
 /* Busca esta regla en tu CSS y cambia el valor de height */
 
 .logo-img {
-    height: 35px; /* <--- Cambia este valor (estaba en 45px o 50px). Prueba con 35px o 30px */
+    height: 42px; /* Prueba con este valor intermedio */
     margin-right: 12px;
-    object-fit: contain; /* Esto asegura que la imagen no se deforme */
-    width: auto; /* Mantener la proporción de ancho automática */
+    object-fit: contain;
+    width: auto;
+    vertical-align: middle; /* Ayuda a que quede bien centrado con el texto */
 }
-
 /* HEADER */
 .main-header {
     background: linear-gradient(rgba(0,45,90,0.8), rgba(0,45,90,0.8)), url('img/conduit-emt.jpeg');
