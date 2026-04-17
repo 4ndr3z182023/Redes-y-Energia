@@ -43,7 +43,7 @@ body {
 }
 
 .logo-img {
-    height: 80px; /* Ajustado para mayor elegancia */
+    height: 100px; /* Ajustado para mayor elegancia */
     object-fit: contain;
     transition: var(--transition);
 }
